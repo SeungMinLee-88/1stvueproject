@@ -5,15 +5,20 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import SemanticUI from 'semantic-ui-vue';
-
-import 'semantic-ui-css/semantic.min.css';
+import PrimeVue from 'primevue/config';
+import Aura from '@primeuix/themes/aura';
 
 
 const app = createApp(App)
+app.use(PrimeVue, {
+  theme: {
+      preset: Aura
+  }
+});
 
 app.use(createPinia())
 app.use(router)
-app.use(SemanticUI);
+app.use(PrimeVue);
+
 
 app.mount('#app')
